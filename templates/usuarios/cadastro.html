@@ -1,0 +1,34 @@
+{% extends "partials/header.html" %}
+
+{% load static %}
+{% block content %}
+    <main>
+        <div class='main-content-div'>
+            <section class="main-content-section">
+                <div class="formulario-papiro">
+                    <h1>Papiro</h1>
+                    <h2 class="cadastro-h2" >Organize suas ideias, registre seus pensamentos.</h2>
+                    
+                    <form action="" method="post" class="form-cadastro">
+
+                        <label class="label-form-login" for="nome">Nome completo:</label>
+                        <input type="text" placeholder="Nome completo" name="nome">
+
+                        <label class="label-form-login" for="email">Digite seu email:</label>
+                        <input type="email" placeholder="Email" name="email">
+
+                        <label class="label-form-login" for="password">Insira sua senha:</label>
+                        <input type="password" name="password" placeholder="Senha">
+
+                        <label class="label-form-login" for="password2">Confirme sua senha:</label>
+                        <input type="password" name="password2" placeholder="Senha">
+
+                        <button class="button-login" type="submit">Cadastrar</button>
+
+                        <span>Já possui uma conta? <a href="{%url 'login'%}">Entre aqui</a></span>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

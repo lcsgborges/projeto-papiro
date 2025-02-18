@@ -1,0 +1,36 @@
+{% extends "partials/header.html" %}
+
+{% load static %}
+{% block content %}
+    <main>
+        <div class='main-content-div'>
+            <section class="main-content-section">
+                <div class="formulario-papiro">
+
+                    <h1 class="login-h1">Papiro</h1>
+                    <h2 class="login-h2">Organize suas ideias, registre seus pensamentos.</h2>
+
+                    <form action="" method="post" class="form-login"> {% csrf_token %}
+                        <div class="">
+                        {% for field in form.visible_fields %}
+
+                        <div class="div-form-login">
+                            <label for="{{field.id_for_label}}" class="label-form-login">
+                                
+                                {{field.label}}
+                            </label>
+                            {{field}}
+                        </div>
+                        {%endfor%}
+                    </div>
+                        <div class="div-button-login">
+                            <button type="submit" class="">Entrar</button>
+                        </div>
+                       
+                    </form>
+                    <span class="span-login">Não possui uma conta? <a href="{%url 'cadastro'%}">Cadastre-se aqui</a></span>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

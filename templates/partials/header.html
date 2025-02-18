@@ -1,0 +1,40 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papiro Notas</title>
+    <link rel="shortcut icon" href="{%static 'assets/icons/papiro.svg'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{%static 'styles/base.css'%}">
+    <link rel="stylesheet" href="{%static 'styles/style.css'%}">
+    <link rel="stylesheet" href="{%static 'styles/login.css'%}">
+</head>
+
+<body>
+    <header class="header-notas">
+        <div class="main-container-notas">
+            <h1 class="main-titulo-notas">Papiro</h1>
+            <nav class="navbar-header">
+                <ul class="nav-list-header">
+                    <li class="nav-item-header"><a href="{%url 'index'%}">Página inicial</a></li>
+                    <li class="nav-item-header"><a href="">Sobre nós</a></li>
+                   
+                    <!-- <li class="nav-item-header"><a href="">Minhas Notas</a></li>
+                    <li class="nav-item-header"><a href="">Minha Conta</a></li> -->
+                    <li class="nav-item-header"><a href="{%url 'login'%}">Acesse aqui</a></li>
+                   
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+   {%block content%}
+
+   {%endblock%}
+
+   {%include 'partials/footer.html'%}
+</body>
+
+</html>
