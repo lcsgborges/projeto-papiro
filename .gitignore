@@ -1,0 +1,71 @@
+# Arquivos Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ambiente Virtual
+venv/
+env/
+.virtualenv/
+
+# Configurações do Django
+*.log
+*.sqlite3
+db.sqlite3
+/media/
+staticfiles/
+static/
+.DS_Store
+
+# Arquivos de configuração e credenciais
+.env
+*.env
+config.json
+
+# Migrations desnecessárias
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Arquivos de IDEs e editores de texto
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de pacotes e dependências
+node_modules/
+package-lock.json
+yarn.lock
+
+# Arquivos de cache do pip
+__pypackages__/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Docker e containers
+*.pid
+*.sock
+logs/
+tmp/
+
+# Arquivos de build
+dist/
+build/
+*.egg-info/
+
+# Cobertura de testes
+.coverage
+htmlcov/
+*.cover
+.cache/
+nosetests.xml
+pytest_cache/
+junitxml.xml
+
+# Arquivos gerados por ferramentas de deploy
+*.tar.gz
+*.zip
+
+# Outros
+Thumbs.db
