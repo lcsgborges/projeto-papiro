@@ -1,0 +1,28 @@
+{% extends "partials/header.html" %}
+
+{% load static %}
+{% block content %}
+
+    <div class="criar-nota-div">
+        <form action="{%url 'criar_nota'%}" method="POST" class="criar-nota-form"> {% csrf_token %}
+
+            <div class="">
+            {% for field in form.visible_fields %}
+
+            <div class="div-form-nota">
+                <label for="{{field.id_for_label}}" class="label-form-login">
+                    
+                    {{field.label}}
+                </label>
+                {{field}}
+            </div>
+            {%endfor%}
+        </div>
+            <div class="div-button-login">
+                <button type="submit" class="">Criar nota</button>
+            </div>
+           
+        </form>
+    </div>
+
+{%endblock%}

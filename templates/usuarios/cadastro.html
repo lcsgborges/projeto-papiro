@@ -2,31 +2,37 @@
 
 {% load static %}
 {% block content %}
+
+{%for message in messages%}
+    <div> <p>{{message}}</p></div>
+    {%endfor%}
+    
     <main>
         <div class='main-content-div'>
+            
             <section class="main-content-section">
                 <div class="formulario-papiro">
-                    <h1>Papiro</h1>
-                    <h2 class="cadastro-h2" >Organize suas ideias, registre seus pensamentos.</h2>
-                    
-                    <form action="" method="post" class="form-cadastro">
+                    <h1 class="cadastro-h1">Faça seu cadastro</h1>
 
-                        <label class="label-form-login" for="nome">Nome completo:</label>
-                        <input type="text" placeholder="Nome completo" name="nome">
+                    <form action="{%url 'cadastro'%}" method="POST" class="form-cadastro"> {% csrf_token %}
 
-                        <label class="label-form-login" for="email">Digite seu email:</label>
-                        <input type="email" placeholder="Email" name="email">
+                        <div class="">
+                        {% for field in form.visible_fields %}
 
-                        <label class="label-form-login" for="password">Insira sua senha:</label>
-                        <input type="password" name="password" placeholder="Senha">
-
-                        <label class="label-form-login" for="password2">Confirme sua senha:</label>
-                        <input type="password" name="password2" placeholder="Senha">
-
-                        <button class="button-login" type="submit">Cadastrar</button>
-
-                        <span>Já possui uma conta? <a href="{%url 'login'%}">Entre aqui</a></span>
+                        <div class="div-form-cadastro">
+                            <label for="{{field.id_for_label}}" class="label-form-login">
+                                
+                                {{field.label}}
+                            </label>
+                            {{field}}
+                        </div>
+                        {%endfor%}
+                    </div>
+                        <div class="div-button-login">
+                            <button type="submit" class="">Cadastrar</button>
+                        </div>
                     </form>
+                    <span class="span-login">Já possui uma conta? <a href="{%url 'login'%}">Entre aqui</a></span>
                 </div>
             </section>
         </div>

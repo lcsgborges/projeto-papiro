@@ -1,0 +1,33 @@
+{% extends "partials/header.html" %}
+
+{% load static %}
+{% block content %}
+
+
+<div class="listar-nota-div">
+    
+    <!-- <div>  <h1 class='minhas-notas'>Minhas Notas</h1></div> -->
+    <div class="notas-container">
+       
+        {% if notas %}
+            {% for nota in notas %}
+                <div class="nota">
+                    <h3>{{ nota.titulo }}</h3>
+                    <p class="categoria">{{ nota.categoria }}</p>
+                    <p>{{ nota.conteudo }}</p>
+                    <div class="botoes">
+                        <a href="" class="editar">Editar</a>
+                        <a href="" class="excluir" onclick="return confirm('Tem certeza que deseja excluir esta nota?')">Excluir</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Você ainda não criou nenhuma nota.</p>
+        {% endif %}
+       
+    </div>
+    <div> <a href="{% url 'criar_nota' %}" class="nova-nota">Criar Nova Nota</a></div>
+    
+</div>
+
+{%endblock%}
