@@ -12,7 +12,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" align="center" heigth="50" width="60">
 </div>
 
-## Como contribuir:
+## Como Executar:
 1. Clone o repositório:
 ```
 git clone https://github.com/lcsgborges/projeto-papiro.git
